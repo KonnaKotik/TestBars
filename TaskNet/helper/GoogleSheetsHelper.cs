@@ -19,6 +19,9 @@ namespace TaskNet
 		private static string ClientSecret = "credentials.json";
 
 		private static readonly string[] ScopesSheets = {SheetsService.Scope.Spreadsheets};
+		/// <summary>
+		/// Id электронной таблицы
+		/// </summary>
 		private static string _spreadSheetsId;
 		/// <summary>
 		/// Сервис для работы с Google Sheets API
@@ -31,10 +34,13 @@ namespace TaskNet
 		private const string WriteBaseRange = "A1:D1";
 
 		/// <summary>
-		/// Значение начала заполнения ... строк
+		/// Значение начала заполнения строк данными на новом листе
 		/// </summary>
 		private const int InitialRowIndex = 2;
 
+		/// <summary>
+		/// Счетчик заполненных строк в таблице на одном листе
+		/// </summary>
 		private int _count;
 
 		/// <summary>
@@ -134,7 +140,7 @@ namespace TaskNet
 			var response = update.Execute(); }
 
 		/// <summary>
-		/// Заполнение строк 
+		/// Заполнение строк новыми данными
 		/// </summary>
 		/// <param name="valuesResource">Значение ресурса электронной таблицы</param>
 		/// <param name="data">Список объектов для заполнения в таблицу</param>

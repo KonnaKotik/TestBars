@@ -19,7 +19,7 @@ namespace TaskNet
 		private IConfiguration _configuration;
 
 		/// <summary>
-		/// Cловарь с данными серверов
+		/// Cловарь с данными серверов, где ключ - название сервера, значение - модель сервера PostgreSQL
 		/// </summary>
 		private IDictionary<string, ServerConfig> _serverDict;
 
@@ -30,9 +30,9 @@ namespace TaskNet
 		}
 
 		/// <summary>
-		/// Получение 
+		/// Считывание с файла конфигурации данные серверов
 		/// </summary>
-		/// <returns>Словарь </returns>
+		/// <returns>Словарь с данными серверов </returns>
 		private IDictionary<string, ServerConfig> GetServerConnectionString()
 		{
 			return new ConfigurationProvider().Configuration.GetSection("Servers")

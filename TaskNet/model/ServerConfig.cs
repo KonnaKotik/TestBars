@@ -1,6 +1,8 @@
 ﻿namespace TaskNet
 {
-	// Модель сервера PostgreSQL
+	/// <summary>
+	/// Модель сервера PostgreSQL
+	/// </summary>
 	public class ServerConfig
 	{
 		/// <summary>
