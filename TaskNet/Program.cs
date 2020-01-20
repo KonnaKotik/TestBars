@@ -18,6 +18,7 @@ namespace TaskNet
 
 		public static void Main(string[] args)
 		{
+			var configuration = new ConfigurationProvider();
 			var bdConnection = new DataBaseHelper();
 			_serverNames = bdConnection.GetServerNames();
 			var googleSheetsHelper = new GoogleSheetsHelper(_serverNames);
