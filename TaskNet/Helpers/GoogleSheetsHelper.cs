@@ -65,7 +65,7 @@ namespace TaskNet
 		/// <param name="sheets">Список названия листов в Google Tables</param>
 		private void GetSpreadSheetsId(List<string> sheets)
 		{
-			_spreadSheetsId = new ConfigurationProvider().Configuration.GetSection("Sheets")["spreadSheetsId"];
+			_spreadSheetsId = ConfigurationProvider.Configuration.GetSection("Sheets")["spreadSheetsId"];
 			if (string.IsNullOrEmpty(_spreadSheetsId))
 			{
 				CreateNewGoogleSheet(sheets);

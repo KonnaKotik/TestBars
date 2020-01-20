@@ -12,7 +12,7 @@ namespace TaskNet
 		/// </summary>
 		private const string File ="credentials.json" ;
 		
-		public IConfigurationRoot Configuration { get; private set; }
+		public static IConfigurationRoot Configuration { get; private set; }
 		
 		public ConfigurationProvider()
 		{

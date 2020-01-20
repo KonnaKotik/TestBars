@@ -25,7 +25,7 @@ namespace TaskNet
 
 		public DataBaseHelper()
 		{
-			_configuration = new ConfigurationProvider().Configuration;
+			_configuration = ConfigurationProvider.Configuration;
 			_serverDict = GetServerConnectionString();
 		}
 
@@ -35,7 +35,7 @@ namespace TaskNet
 		/// <returns>Словарь с данными серверов </returns>
 		private IDictionary<string, ServerConfig> GetServerConnectionString()
 		{
-			return new ConfigurationProvider().Configuration.GetSection("Servers")
+			return ConfigurationProvider.Configuration.GetSection("Servers")
 				.Get<IDictionary<string, ServerConfig>>();
 		}
 
